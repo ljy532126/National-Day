@@ -1,0 +1,289 @@
+*{margin: 0;padding: 0;}
+body{
+    /* margin:0 auto ; */
+    background-color: rgb(124, 211, 246);
+    width: 100%;
+    height: 100%;
+}
+/* 红旗 */
+.bg{
+    /* margin: 0 auto; */
+    /* 8  70 */
+    /* bottom: 10vh; */
+    top: 68vh;
+    width: 250px;
+    height: 150px;
+    background-color: red;
+    position: absolute;
+    left: 35px;
+    z-index: 999;
+    animation-iteration-count:1;
+
+}
+
+.star{
+    margin: 0 0;
+    position: absolute;
+    display: block;
+    /* color: red; */
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid yellow;/* */
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+    left: 20px;
+}
+.star:before {
+    border-bottom: 80px solid yellow;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+}
+.star:after{
+    content: '';
+    margin: 0;
+    position: absolute;
+    display: block;
+    /* color: red; */
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid yellow;/* */
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    left: -107px;
+    top: 5px;
+}
+.dad{
+    /* position: absolute; */
+    transform: scale(.3) rotate(35deg);
+    top: 10px;
+    left: -50px;
+    z-index: 3;
+}
+.son1{
+    position: absolute;
+    transform: scale(.1) rotate(-60deg);
+    top: -15px;
+    left: 5px;
+}
+.son2{
+    position: absolute;
+    transform: scale(.1) rotate(-45deg);
+    top: 5px;
+    left: 30px;
+}
+.son3{
+    /* position: absolute; */
+    transform: scale(.1) rotate(35deg);
+    top: 33px;
+    left: 30px;
+}
+.son4{
+    /* position: absolute; */
+    transform: scale(.1) rotate(60deg);
+    top: 50px;
+    left: 5px;
+}
+/* 旗杆 */
+.flagpole{
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    background-color: rgb(243, 193, 118);
+    width: 4px;
+    height: 92vh;
+    border: 1px solid rgb(31, 33, 31);
+    z-index: 10;
+    
+}
+/* 球体 */
+.ball{
+    position: absolute;
+    left: -4px;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    background-color: rgb(241, 160, 79);
+    border-radius: 5px 10px;
+    transform: rotate(-45deg);
+}
+/* 旗台 */
+.platform1,.platform2{
+    position: absolute;
+    z-index: 10;
+}
+.platform1{
+    width: 100px;
+    height: 25px;
+    bottom: 35px;
+    background-color: brown;
+}
+.platform2{
+    width: 180px;
+    height: 35px;
+    bottom: 0;
+    background-color: brown;
+    
+}
+/* 按钮 */
+
+
+/* 美化按钮 */
+.btn,.btn2 {
+            color: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            border: none;
+            position: absolute;
+            right: 50%;
+            left: 50%;
+            bottom: 4vh;
+            width: 100px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+            background-size: 600%;
+            -webkit-animation: anime 6s linear infinite;
+            animation: anime 6s linear infinite;
+        }
+
+        .btn2 {
+            position: absolute;
+            margin-top: -70px;
+            z-index: -1;
+            filter: blur(30px);
+            opacity: 0.8;
+        }
+
+
+        @keyframes anime {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @-webkit-keyframes anime {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+.btn,.btn2:hover{
+    cursor: pointer;
+}
+
+/* 打字机效果 */
+.content-text{
+    position: absolute;
+    top: 30%;
+    right: 10vh;
+    /* height: 30%; */
+    width: 40vh;
+    /* background: white; */
+    border-radius: 4px;
+    word-wrap: break-word;
+    word-wrap: break-all;
+    overflow: hidden;
+    /* opacity: 0.5; */
+    
+}
+.content-text::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(3px);
+    margin: -21px;
+    background: white;
+    opacity: .3;
+}
+.content-text p{
+    padding: 20px 15px;
+    color: rgb(216, 55, 55);
+    text-indent: 20px;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    filter: blur(0);
+}
+
+/* 发光特效文字 */
+.showtime{
+    position: absolute;
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: #000; */
+
+    -webkit-box-reflect:below 1px linear-gradient(transparent,rgba(0,0,0,0.2));
+}
+.showtime p{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    outline: none;
+    transform: translate(-50%,-29%);
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 25px;
+    font-size: 2.5em;
+    color: white;
+    --c:lightseagreen;
+    text-shadow: 0 0 10px var(--c),
+    0 0 20px var(--c),
+    0 0 40px var(--c),
+    0 0 80px var(--c),
+    0 0 160px var(--c);
+    animation: textColor 6s linear infinite;
+}
+
+@keyframes text {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* 定义动画 */
+
+@keyframes textColor {
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+/* 18388782456 */
+

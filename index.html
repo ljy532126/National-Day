@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国庆快乐</title>
+    <link rel="stylesheet" href="./css/guoqing.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body id="bg">
+    <button class="btn" id="shen" onclick="shen()">升旗</button>
+    <!-- 旗面 -->
+    <div class="bg" id="qi">
+        <div class="star dad"></div>
+        <div class="star son1"></div>
+        <div class="star son2"></div>
+        <div class="star son3"></div>
+        <div class="star son4"></div>
+    </div>
+    <!-- 旗杆 -->
+    <div class="flagpole">
+        <!-- 圆球 -->
+        <div class="ball"></div>
+    </div>
+    <!-- 旗台 -->
+    <div class="platform1"></div>
+    <div class="platform2"></div>
+
+    <!-- 祝福内容 -->
+    <div class="content-box">
+        <div class="content-text" id="contents"></div>
+    </div>
+    <!-- 时间 -->
+    <div class="showtime" >
+        
+        <p contenteditable="true" id="time"></p>
+    
+    </div>
+    <script>
+        'use strict';
+        // 国旗上升效果
+        let btn = document.getElementById('shen');
+        let qi = document.getElementById('qi');
+        let bg = document.getElementById('bg');
+        function shen(){
+            btn.style.display = "none";
+            setTimeout("start()",8000);
+            setTimeout(function shen(){
+            qi.style.transition = '8s';
+            qi.style.top = '45px';
+        },100);//延迟100毫秒
+        
+        //时间差
+        
+        }
+        setTimeout(function(){
+            setInterval(function(){
+            let time = document.getElementById('time');
+            let date1 = '1949/10/01 00:00:00';
+            let date2 = new Date();
+            let date3 = date2.getTime() - new Date(date1).getTime();
+            let days = Math.floor(date3/(24*3600*1000));
+            let leave1 = date3%(24*3600*1000);
+            let hours = Math.floor(leave1/(60*1000));
+            let leave2 = leave1%(3600*1000);
+            let minutes = Math.floor(leave2/(60*1000));
+            let leave3 = leave2%(60*1000);
+            let seconds = Math.round(leave3/1000);
+            time.innerHTML = ("新中国诞生了"+days+"天"+hours+"小时"+minutes+"分钟"+seconds+"秒");
+        },1000);
+        },24000);
+        
+         //打字机
+         function start(){
+            let str = '我守护你，不论何时何地；我不是一人之力，我是14亿分之一！<br/>&nbsp;&nbsp;&nbsp;&nbsp;祖国风雨数十载，开创美好新时代。中华全民齐奋进，追求卓越创辉煌。<br/>祖国祝你生日快乐！！！';
+            let str_ = '';
+            let i = 0;
+            let content = document.getElementById('contents');
+            let timer = setInterval(() => {
+                if(str_.length < str.length){
+                    str_ += str[i++];
+                    content.innerHTML = '<p>' + str_ + '_</p>';
+                }else{
+                    clearInterval(timer)
+                    content.innerHTML = '<P>' + str_ + '</p>';
+                }
+            }, 100);
+
+            setTimeout(function(){
+                content.style.transition = '1s';
+                content.style.display = 'none';
+                bg.style.backgroundColor = '#06252e';
+            
+            },14000);
+
+            
+        }
+    </script>
+</body>
+</html>
